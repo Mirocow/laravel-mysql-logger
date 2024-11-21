@@ -2,7 +2,8 @@
 
 namespace ITelmenko\Logger\Monolog\Handler;
 
-class ExceptionsProcessor {
+class ExceptionsProcessor
+{
 
     public function __invoke($record) {
         if(!empty($record['context']['exception'])) {

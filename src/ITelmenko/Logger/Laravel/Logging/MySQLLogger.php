@@ -20,6 +20,7 @@ class MySQLLogger
         $channel = $config['name'] ?? config('app.env');
         $monolog = new Logger($channel);
         $handler = new MysqlHandler();
+        $handler->setConfig($config);
         $handler->pushProcessor(new ExceptionsProcessor);
         $monolog->pushHandler($handler);
         return $monolog;
